@@ -2,9 +2,13 @@ import Square from './square';
 
 const createBoard = () => {
     const board = [];
-    for(let i = 0; i < 8; i++){ // row
-        for(let j = 0; j < 8; j++){ // column
-            board.push(new Square(i, j))
+    for(let row = 0; row < 8; row++){
+        
+        const num = 8 - row;
+        let asciiLetter = 97;
+        
+        for(let col = 0; col < 8; col++){
+            board.push(new Square(row, col, num, asciiLetter++));
         }
     }
 

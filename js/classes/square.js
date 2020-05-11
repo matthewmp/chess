@@ -1,9 +1,10 @@
 export default class Square{
-    constructor(row, col){
+    constructor(row, col, num, letter){
         this.row = row + 1;
         this.col = col;
         this.color = this._setColor();
-        // this.letter = getLetter(); 
+        this.number = num;
+        this.letter = String.fromCharCode(letter);
     }
 
     _setColor(){
