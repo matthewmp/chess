@@ -1,0 +1,23 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewmp/chess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewmp/chess/issues"
+  },
+  "homepage": "https://github.com/matthewmp/chess#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
