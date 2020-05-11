@@ -1,3 +1,5 @@
+import Square from './square';
+
 const createBoard = () => {
     const board = [];
     for(let i = 0; i < 8; i++){ // row
@@ -9,7 +11,7 @@ const createBoard = () => {
     return board;
 }
 
-class Board{
+export default class Board{
     constructor(){
         this.board = createBoard();
         this.el = document.getElementById('canvas');
@@ -41,28 +43,3 @@ class Board{
         })
     }
 }
-
-class Square{
-    constructor(row, col){
-        this.row = row + 1;
-        this.col = col;
-        this.color = this._setColor();
-        // this.letter = getLetter(); 
-    }
-
-    _setColor(){
-        if(this.row % 2 === 0){
-            let color = this.col % 2 === 0 ? 'dark' : 'light';
-            return color;           
-        }
-
-        if(this.row % 2 !== 0){
-            let color = this.col % 2 === 0 ? 'light' : 'dark';
-            return color;           
-        }
-    }
-}
-
-// initialize
-const board = new Board();
-board.render();

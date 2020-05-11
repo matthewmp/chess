@@ -204,7 +204,7 @@ var Square = /*#__PURE__*/function () {
   }]);
 
   return Square;
-}(); // initialize
+}(); // Initialize
 
 
 var board = new Board();
