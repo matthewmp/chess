@@ -41,8 +41,11 @@ export default class Board{
             let color = square.color === 'light' ? 'white' : 'green';
             this.ctx.fillStyle = color;
 
+            square.setPosition(xPos, yPos);
+            square.y = yPos;
+            square.setSize(this.squareSize);
 
-            this.ctx.fillRect(xPos, yPos, this.squareSize, this.squareSize);
+            this.ctx.fillRect(square.x, square.y, square.size, square.size);
             xPos += 50;
         })
     }

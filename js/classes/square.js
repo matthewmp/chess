@@ -5,6 +5,9 @@ export default class Square{
         this.color = this._setColor();
         this.number = num;
         this.letter = String.fromCharCode(letter);
+        this.x = null;
+        this.y = null;
+        this.size = null;
     }
 
     _setColor(){
@@ -17,5 +20,14 @@ export default class Square{
             let color = this.col % 2 === 0 ? 'light' : 'dark';
             return color;           
         }
+    }
+
+    setPosition(x, y){
+        this.x = x;
+        this.y = y;
+    }
+
+    setSize(size){
+        this.size = size;
     }
 }
