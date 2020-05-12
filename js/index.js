@@ -8,7 +8,7 @@ board.render();
 console.log(board)
 
 // Initalize Event
-window.ev = new Event(board);
+window.ev = new Event(board.board);
 
 
 

@@ -10,9 +10,10 @@ export default class Event{
     }
 
     _init(){
+        console.log('EvtB: ', this.board)
         this.canvas = document.getElementById('canvas');
-        window.addEventListener('click', (e) => {
-            this.getMousePos(e)
+        window.addEventListener('click', (event) => {
+            this.getMousePos(event)
         })
     }
 
@@ -21,20 +22,27 @@ export default class Event{
         // console.log(event.clientX - rect.left, event.clientY - rect.top)
         this.x = event.clientX - rect.left;
         this.y = event.clientY - rect.top;
-        this._setCurrentIndices();
-        this._setCurrentSquare();
+        this._findCurrentSquare();
         console.log(ev)
     }
 
-    _setCurrentSquare(){
-        this.board.forEach(row => {
-            row.forEach((square, index) => {
-                
-            })
-        })
+    _setCurrentSquare(square){
+        this.currentSquare = square;
     }
 
-    _setCurrentIndices(){
+    _setCurrentIndices(indices){
+        this.indices = indices;
+    }
 
+    _findCurrentSquare(){
+        this.board.forEach((row, rowIndex) => {
+            row.forEach((square, colIndex) => {
+                if(this.x > square.x && this.x < (square.x + square.size) &&
+                   this.y > square.y && this.y < (square.y + square.size)) {
+                       this._setCurrentSquare(square);
+                       this._setCurrentIndices([rowIndex, colIndex]);
+                   }
+            })
+        })
     }
 }

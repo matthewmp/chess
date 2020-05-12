@@ -24,7 +24,7 @@ export default class Board{
         this.board = createBoard();
         this.el = document.getElementById('canvas');
         this.ctx = this.el.getContext('2d');
-        this.squareSize = 50;
+        this.squareSize = 75;
         this.width = this.squareSize * 8;
         this.height = this.squareSize * 8;
     }
@@ -52,7 +52,7 @@ export default class Board{
                 square.setSize(this.squareSize);
 
                 this.ctx.fillRect(square.x, square.y, square.size, square.size);
-                xPos += 50;
+                xPos += this.squareSize;
             });
         });
     }
