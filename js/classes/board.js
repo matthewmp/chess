@@ -44,7 +44,6 @@ export default class Board{
                     xPos = 0;
                 }
 
-                // console.log(`Index: ${index}, X: ${xPos}, Y: ${yPos}, Square: ${square.color}`)
                 let color = square.color === 'light' ? 'white' : 'green';
                 this.ctx.fillStyle = color;
 
