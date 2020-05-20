@@ -7,6 +7,8 @@ export default class Event{
         this.y = null;
         this.currentSquare = null;
         this.indices = [];
+        this.colorSelection = [];  // Store squares to train colors
+        this.mode = null;
     }
 
     _init(){
@@ -41,8 +43,29 @@ export default class Event{
                    this.y > square.y && this.y < (square.y + square.size)) {
                        this._setCurrentSquare(square);
                        this._setCurrentIndices([rowIndex, colIndex]);
+                       if(this.mode === 'color-selection'){
+                           this._addToColorSelection();
+                       }
                    }
             })
         })
+    }
+
+    _addToColorSelection(){
+        if(this.colorSelection.indexOf(this.currentSquare < 0)){
+            this.colorSelection.push(this.currentSquare);
+        }
+    }
+
+    setMode(mode){
+        switch(mode){
+            case 'color-selection':
+                ev.mode = 'color-selection';
+                break;
+
+            default:
+                ev.mode = null;
+                this.colorSelection.length = 0;
+        }
     }
 }
